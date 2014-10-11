@@ -1,0 +1,41 @@
+{
+  "name": "gulp-smushit",
+  "version": "0.0.1",
+  "description": "Gulp plugin to optimize PNG and JPG using Yahoo Smushit",
+  "license": "MIT",
+  "repository": "heldr/gulp-smushit",
+  "author": {
+    "name": "Helder Santana",
+    "email": "helder.css@gmail.com",
+    "url": "https://github.com/heldr"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "jshint && mocha --timeout 20000"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "gulpplugin",
+    "smushit",
+    "png",
+    "jpg",
+    "gif",
+    "image optimizer",
+    "compress image",
+    "image",
+    "web performance",
+    "webperf"
+  ],
+  "dependencies": {
+    "gulp-util": "^3.0.1",
+    "smosh": "0.0.1",
+    "through2": "^0.6.3"
+  },
+  "devDependencies": {
+    "mocha": "*"
+  }
+}
