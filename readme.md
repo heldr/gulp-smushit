@@ -6,6 +6,7 @@ Gulp plugin to optimize PNG and JPG using Yahoo Smushit.
 
 [Read more about Smush.it](http://www.smushit.com/ysmush.it/)
 
+Prefer Grunt? [grunt-smushit](https://github.com/heldr/grunt-smushit)
 
 ## Install
 
