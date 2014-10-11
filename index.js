@@ -10,8 +10,10 @@ module.exports = function (options) {
 			gutil.log(file.path);
 		}
 
-		gutil.log('Compress rate:', '%', data.percent);
-		gutil.log(data.src_size, 'bytes  to  ', data.dest_size, 'bytes');
+		if (data) {
+			gutil.log('gulp-smushit:', 'Compress rate', '%', data.percent);
+			gutil.log('gulp-smushit:', data.src_size, 'bytes  to  ', data.dest_size, 'bytes');
+		}
 	}
 
 	function onSmoshEnd(file, cb, contents, data) {
@@ -20,13 +22,21 @@ module.exports = function (options) {
 		}
 
 		file.contents = contents;
+
 		this.push(file);
 
 		cb();
 	}
 
-	function onError(err) {
-		this.emit('error', new gutil.PluginError('gulp-smushit', err));
+	function onSmoshError(file, cb, msg) {
+		if (msg !== "No savings") {
+			return this.emit('error', new gutil.PluginError('gulp-smushit', msg));
+		}
+
+		gutil.log('gulp-smushit:', 'No savings for:', file.path);
+		this.push(file);
+
+		cb();
 	}
 
 	return through.obj(function (file, enc, cb) {
@@ -46,6 +56,6 @@ module.exports = function (options) {
 
 		smosh(file.contents)
 			.on('end', onSmoshEnd.bind(this, file, cb))
-			.on('error', onError.bind(this));
+			.on('error', onSmoshError.bind(this, file, cb));
 	});
 };

@@ -42,3 +42,20 @@ it('should optimize PNG', function (cb) {
 
 	stream.end();
 });
+
+it('should not break when bytes are not saved', function (cb) {
+	var stream = smushit({verbose:true});
+
+	stream.on('data', function (file) {
+		assert.equal(file.contents.toString('binary'), expectedPNG);
+	});
+
+	stream.on('end', cb);
+
+	stream.write(new gutil.File({
+		path: path.join(__dirname, './test_data/expected/dp.png'),
+		contents: new Buffer(expectedPNG, 'binary')
+	}));
+
+	stream.end();
+});
