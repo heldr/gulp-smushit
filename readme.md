@@ -1,6 +1,6 @@
 # [gulp](http://gulpjs.com)-smushit [![Build Status](https://travis-ci.org/heldr/gulp-smushit.svg?branch=master)](https://travis-ci.org/heldr/gulp-smushit)
 
-Gulp plugin to optimize PNG and JPG using Yahoo Smushit.
+Gulp plugin to optimize PNG and JPG using Yahoo Smushit. Made on top of [smosh](https://github.com/heldr/smosh).
 
 > Smush.it uses optimization techniques specific to image format to remove unnecessary bytes from image files. It is a "lossless" tool, which means it optimizes the images without changing their look or visual quality.
 
