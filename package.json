@@ -1,6 +1,6 @@
 {
   "name": "gulp-smushit",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Gulp plugin to optimize PNG and JPG using Yahoo Smushit",
   "license": "MIT",
   "repository": "heldr/gulp-smushit",
