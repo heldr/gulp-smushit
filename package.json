@@ -1,7 +1,7 @@
 {
   "name": "gulp-smushit",
   "version": "0.0.4",
-  "description": "Gulp plugin to optimize PNG and JPG using Yahoo Smushit",
+  "description": "Gulp plugin to optimize PNG and JPG using reSmush.it",
   "license": "MIT",
   "repository": "heldr/gulp-smushit",
   "author": {
@@ -32,8 +32,8 @@
   ],
   "dependencies": {
     "gulp-util": "^3.0.1",
-    "smosh": "^0.2.1",
-    "through2": "^0.6.3"
+    "smosh": "^1.0.0",
+    "through2": "^2.0.0"
   },
   "devDependencies": {
     "mocha": "*"
