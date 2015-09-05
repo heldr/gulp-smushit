@@ -1,6 +1,6 @@
 {
   "name": "gulp-smushit",
-  "version": "0.0.4",
+  "version": "1.0.0",
   "description": "Gulp plugin to optimize PNG and JPG using reSmush.it",
   "license": "MIT",
   "repository": "heldr/gulp-smushit",
