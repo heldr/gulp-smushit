@@ -9,7 +9,7 @@ var assert      = require('assert'),
     expectedJPG = fs.readFileSync(path.join(__dirname, './test_data/expected/dp.jpg'), 'binary'),
     expectedPNG = fs.readFileSync(path.join(__dirname, './test_data/expected/dp.png'), 'binary');
 
-it('should optimize JPG', function (cb) {
+it('should optimize JPG - verbose mode: false', function (cb) {
     var stream = smushit();
 
     stream.on('data', function (file) {
@@ -26,7 +26,7 @@ it('should optimize JPG', function (cb) {
     stream.end();
 });
 
-it('should optimize PNG', function (cb) {
+it('should optimize PNG - verbose mode: true', function (cb) {
     var stream = smushit({verbose:true});
 
     stream.on('data', function (file) {
@@ -44,7 +44,7 @@ it('should optimize PNG', function (cb) {
 });
 
 it('should not break when bytes are not saved', function (cb) {
-    var stream = smushit({verbose:true});
+    var stream = smushit();
 
     stream.on('data', function (file) {
         assert.equal(file.contents.toString('binary'), expectedPNG);

@@ -13,7 +13,9 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-    "test": "jshint index.js && mocha --timeout 20000"
+    "spec": "mocha --timeout 5000",
+    "lint": "jshint index.js",
+    "test": "npm run lint && npm run spec"
   },
   "files": [
     "index.js"
@@ -31,11 +33,12 @@
     "webperf"
   ],
   "dependencies": {
-    "gulp-util": "^3.0.1",
-    "smosh": "^1.1.0",
-    "through2": "^2.0.0"
+    "gulp-util": "^3.0.7",
+    "smosh": "^1.2.0",
+    "through2": "^2.0.1"
   },
   "devDependencies": {
-    "mocha": "*"
+    "jshint": "^2.9.1",
+    "mocha": "^2.4.5"
   }
 }

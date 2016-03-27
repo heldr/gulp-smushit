@@ -13,7 +13,6 @@
     "trailing": true,
     "smarttabs": true,
     "node": true,
-    "globalstrict": true,
     "white": true,
     "indent": 4
 }
